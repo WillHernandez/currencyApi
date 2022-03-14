@@ -27,7 +27,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     'localhost', '127.0.0.1',
-    'localhost', 'https://currency-api-will-h.herokuapp.com/'
+    'localhost', 'https://currency-api-will-h.herokuapp.com'
 ]
 
 
