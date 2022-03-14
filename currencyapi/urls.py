@@ -20,6 +20,7 @@ from currencyapi import views
 from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
+    path("", views.home, name="home"),
     path('admin/', admin.site.urls),
     path('currencies/', views.currency_list),
     path('currencies/<int:id>', views.currency_detail)

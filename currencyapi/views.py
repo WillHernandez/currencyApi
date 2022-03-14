@@ -4,10 +4,13 @@ from .serializers import CurrencySerializer
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+from django.http import HttpResponse
+
+def home(request):
+    return HttpResponse("Welcome to our django rest currency API!")
 
 @api_view(['GET', 'POST'])
 def currency_list(request, format=None):
-
 	if request.method == 'GET':
 		# get all the drinks
 		currencies = Currency.objects.all()
@@ -15,7 +18,6 @@ def currency_list(request, format=None):
 		serializer = CurrencySerializer(currencies,many=True)
 		# return json
 		return Response(serializer.data)
-
 	if request.method == 'POST':
 		serializer = CurrencySerializer(data=request.data)	
 		if serializer.is_valid():
